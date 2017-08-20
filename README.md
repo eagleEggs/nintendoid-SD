@@ -2,7 +2,6 @@
 documentation and examples
 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsDemo3.gif?raw=true)
-![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/DSInspectorParameters.png?raw=true)
 
 
 This asset comes packaged with the NDS prefab.
@@ -27,4 +26,7 @@ Within the inspector there are many parameters:
  drag the prefab in, and modify the scroll rect content to match that of your game's needs.
  
  
- 
+
+Example:
+
+![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/DSInspectorParameters.png?raw=true)
