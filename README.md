@@ -1,7 +1,7 @@
 # nintendoDSscreenSimulator
 documentation and examples
 
-![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsDemo3.gif?raw=true)
+![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/ds.gif?raw=true)
 
 
 This asset comes packaged with the NDS prefab.
