@@ -1,7 +1,7 @@
 # nintendoDSscreenSimulator
 documentation and examples
 
-![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/ds.gif?raw=true)
+![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/ds.gif?raw=true)<br>
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_materials.gif?raw=true)
 
 
