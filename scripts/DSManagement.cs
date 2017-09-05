@@ -38,6 +38,10 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/* 					  */private Button 			greenButton;
 	[SerializeField]/* 					  */private Button 			whiteButton;
 	[SerializeField]/* 					  */private Button 			randomButton;
+	[SerializeField]/* 					  */private Button 			matteButton;
+	[SerializeField]/* 					  */private Button 			glossButton;
+	[SerializeField]/* 					  */private Slider 			rotateSlider;
+	[SerializeField]/* 					  */private float 			rotateSliderAmount;
 	[SerializeField]/* 					  */private Camera 			dsSideCamera;
 	[SerializeField]/* 					  */private Camera 			dsFrontCamera;
 	[SerializeField]/* 					  */private Camera 			dsCloseCamera;
@@ -46,6 +50,8 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/* 					  */private GameObject batteryLight;
 	[SerializeField]/*					  */private AudioSource dsAudioSource;
 	[SerializeField]/*					  */private AudioClip[] dsAudioClips;
+	[SerializeField]/*					  */private Material glossShader;
+	[SerializeField]/*					  */private Material matteShader;
 
 
 	void Start(){
@@ -99,9 +105,30 @@ public class DSManagement : MonoBehaviour {
     	Button theRandomButton = randomButton.GetComponent<Button>();
     	theRandomButton.onClick.AddListener(dsChangeColorRandom);
 
+    	/* shader control */
+    	Button theMatteButton = matteButton.GetComponent<Button>();
+    	theMatteButton.onClick.AddListener(dsChangeShaderMatte);
+
+    	Button theGlossButton = glossButton.GetComponent<Button>();
+    	theGlossButton.onClick.AddListener(dsChangeShaderGloss);
+
 
 	}
 
+
+	void dsChangeShaderMatte(){
+
+		Debug.Log("Changing Shader to Matte");
+		//dsMaterial = matteShader;
+
+	}
+
+	void dsChangeShaderGloss(){
+
+		Debug.Log("Changing Shader to Gloss");
+		//dsMaterial = glossShader;
+
+	}
 
 	void dsChangeColorBlue(){
 
@@ -247,7 +274,8 @@ public class DSManagement : MonoBehaviour {
 
 	void Update(){
 
-
+		rotateSliderAmount = rotateSlider.value;
+		ds.transform.rotation = Quaternion.Euler(0, rotateSliderAmount * 360, 0);
 
 
 	}
