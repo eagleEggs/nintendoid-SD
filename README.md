@@ -1,7 +1,7 @@
 # nintendoDSscreenSimulator
 documentation and examples
 
-![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_colorChange.gif?raw=true)
+![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_colorChange.gif?raw=true)<br><br>
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_materials.gif?raw=true)
 
 
