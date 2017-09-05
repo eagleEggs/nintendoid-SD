@@ -9,6 +9,7 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/* 					  */public 	GameObject 		dsTop;
 	[SerializeField]/* 					  */public 	GameObject 		dsBottom;
 	[SerializeField]/* 					  */public 	Animator 		dsAnimation;
+	[SerializeField]/* 					  */public 	Material		dsMaterial;
 	[SerializeField]/* 					  */private bool 			dsIsOpen;
 	[SerializeField]/* 					  */private bool 			dsSpotPass=false;
 	[SerializeField]/* 					  */private bool 			dsStreetPass=false;
@@ -28,6 +29,15 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/* 					  */private Button 			dsStreetPassButton;
 	[SerializeField]/* 					  */private Button 			dsSpotPassButton;
 	[SerializeField]/* 					  */private Button 			dsBatteryButton;
+	[SerializeField]/* 					  */private Button 			blueButton;
+	[SerializeField]/* 					  */private Button 			goldButton;
+	[SerializeField]/* 					  */private Button 			blackButton;
+	[SerializeField]/* 					  */private Button 			redButton;
+	[SerializeField]/* 					  */private Button 			pinkButton;
+	[SerializeField]/* 					  */private Button 			yellowButton;
+	[SerializeField]/* 					  */private Button 			greenButton;
+	[SerializeField]/* 					  */private Button 			whiteButton;
+	[SerializeField]/* 					  */private Button 			randomButton;
 	[SerializeField]/* 					  */private Camera 			dsSideCamera;
 	[SerializeField]/* 					  */private Camera 			dsFrontCamera;
 	[SerializeField]/* 					  */private Camera 			dsCloseCamera;
@@ -55,10 +65,117 @@ public class DSManagement : MonoBehaviour {
     	theDSStreetPassButton.onClick.AddListener(initiateStreetPass);
     	Button theDSSpotPassButton = dsSpotPassButton.GetComponent<Button>();
     	theDSSpotPassButton.onClick.AddListener(initiateSpotPass);
-    	Button theBatteryButton = dsBatteryButton.GetComponent<Button>();
-    	theBatteryButton.onClick.AddListener(initiateBatteryLight);
+
+    	//Button theBatteryButton = dsBatteryButton.GetComponent<Button>();
+    	//theBatteryButton.onClick.AddListener(initiateBatteryLight);
 
 
+    	/* color system */
+
+    	Button theBlueButton = blueButton.GetComponent<Button>();
+    	theBlueButton.onClick.AddListener(dsChangeColorBlue);
+
+    	Button theRedButton = redButton.GetComponent<Button>();
+    	theRedButton.onClick.AddListener(dsChangeColorRed);
+
+    	Button theBlackButton = blackButton.GetComponent<Button>();
+    	theBlackButton.onClick.AddListener(dsChangeColorBlack);
+
+    	Button theGoldButton = goldButton.GetComponent<Button>();
+    	theGoldButton.onClick.AddListener(dsChangeColorGold);
+
+    	Button thePinkButton = pinkButton.GetComponent<Button>();
+    	thePinkButton.onClick.AddListener(dsChangeColorPink);
+
+    	Button theYellowButton = yellowButton.GetComponent<Button>();
+    	theYellowButton.onClick.AddListener(dsChangeColorYellow);
+
+    	Button theGreenButton = greenButton.GetComponent<Button>();
+    	theGreenButton.onClick.AddListener(dsChangeColorGreen);
+
+    	Button theWhiteButton = whiteButton.GetComponent<Button>();
+    	theWhiteButton.onClick.AddListener(dsChangeColorWhite);
+
+    	Button theRandomButton = randomButton.GetComponent<Button>();
+    	theRandomButton.onClick.AddListener(dsChangeColorRandom);
+
+
+	}
+
+
+	void dsChangeColorBlue(){
+
+			Debug.Log("Changing Color to Blue");
+			dsMaterial.SetColor("_Color", Color.blue);
+			dsMaterial.SetColor("_EmissionColor", Color.blue);
+
+			//dsMaterial.material.SetColor("_Color", Color.blue);
+
+	}
+
+	void dsChangeColorRed(){
+
+
+			Debug.Log("Changing Color to Red");
+			dsMaterial.SetColor("_Color", Color.red);
+			dsMaterial.SetColor("_EmissionColor", Color.red);
+
+	}
+		void dsChangeColorGold(){
+
+
+			Debug.Log("Changing Color to Yellow");
+			dsMaterial.SetColor("_Color", Color.yellow);
+			dsMaterial.SetColor("_EmissionColor", Color.yellow);
+	}
+
+		void dsChangeColorBlack(){
+
+
+			Debug.Log("Changing Color to Black");
+			dsMaterial.SetColor("_Color", Color.black);
+			dsMaterial.SetColor("_EmissionColor", Color.black);
+	}
+
+		void dsChangeColorPink(){
+
+
+			Debug.Log("Changing Color to Pink");
+			dsMaterial.SetColor("_Color", new Color(1, 0, 1, 1));
+			dsMaterial.SetColor("_EmissionColor", new Color(1, 0, 1, 1));
+	}
+
+		void dsChangeColorYellow(){
+
+
+			Debug.Log("Changing Color to Yellow");
+			dsMaterial.SetColor("_Color", Color.yellow);
+			dsMaterial.SetColor("_EmissionColor", Color.yellow);
+	}
+
+		void dsChangeColorGreen(){
+
+
+			Debug.Log("Changing Color to Green");
+			dsMaterial.SetColor("_Color", Color.green);
+			dsMaterial.SetColor("_EmissionColor", Color.green);
+	}
+
+		void dsChangeColorWhite(){
+
+
+			Debug.Log("Changing Color to White");
+			dsMaterial.SetColor("_Color", Color.white);
+			dsMaterial.SetColor("_EmissionColor", Color.white);
+	}
+
+		void dsChangeColorRandom(){
+
+
+			Debug.Log("Changing Color to White");
+			dsMaterial.SetColor("_Color", Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+			dsMaterial.SetColor("_EmissionColor", Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f));
+			//Debug.Log(randomColorName);
 	}
 
 
@@ -97,8 +214,10 @@ public class DSManagement : MonoBehaviour {
 	}
 
 	void initiateBatteryLight(){
+		if(batteryLight.activeSelf==false){
+		batteryLight.SetActive(true);
+		} else { batteryLight.SetActive(false);}
 
-		
 
 
 	}
