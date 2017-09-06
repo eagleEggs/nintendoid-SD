@@ -14,6 +14,7 @@ Set the rect content within both screens and set the top screen offset.
 
 There are many parameters to configure, most are defaulted to 'enabled':
 
+
  - StreetPass
  - SpotPass
  - Low Battery
@@ -27,11 +28,14 @@ There are many parameters to configure, most are defaulted to 'enabled':
  - Sounds
  - Lights
  
- There are two versions of this asset.
- By default, the base asset is free (usable content that can be optimized manually).
- The free version is supported through GitHub issues and by availability.
  
- The extended asset has been fully optimized and will be available on the asset store with dedicated support.
+ There are two versions of this asset:
+ 
+ a) The base asset is free (usable content that can be optimized manually).
+    Supported through GitHub issues and by availability.
+ 
+ b) The extended asset has been fully optimized and will be available on the asset store with dedicated support.
+    Includes all materials, configurations, script upgrades, further optimizations, and all extended updates.
  
 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsLightTesting5.gif?raw=true)
