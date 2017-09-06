@@ -1,19 +1,18 @@
-# nintendoDSscreenSimulator
-documentation and examples
+# [nintendoid SD]
+in game handheld with dual screens
 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_colorChange.gif?raw=true)<br><br>
 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_materials.gif?raw=true)
 
 
-This asset comes packaged with the NDS prefab.
+This asset comes packaged with the nintendoid SD prefab.
 Drag it into the scene and hit play.
 
+Set the rect content within both screens and set the top screen offset.
 
 
-There are a few buttons to play around with.
-
-Within the inspector there are many parameters:
+There are many parameters to configure, most are defaulted to 'enabled':
 
  - StreetPass
  - SpotPass
@@ -23,11 +22,16 @@ Within the inspector there are many parameters:
  - Close Amount
  - Screen Brightness
  - Alternative Scroll Rect Content
+ - Interactable Buttons
+ - Minigame Configuration
+ - Sounds
+ - Lights
  
- Many of these settings may be available within Game Mode as well.
+ There are two versions of this asset.
+ By default, the base asset is free (usable content that can be optimized manually).
+ The free version is supported through GitHub issues and by availability.
  
- If you'd like to use this in your game (like Luigi's Mansion!), just
- drag the prefab in, and modify the scroll rect content to match that of your game's needs.
+ The extended asset has been fully optimized and will be available on the asset store with dedicated support.
  
 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsLightTesting5.gif?raw=true)
