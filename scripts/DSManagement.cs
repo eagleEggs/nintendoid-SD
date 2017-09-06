@@ -7,10 +7,12 @@ public class DSManagement : MonoBehaviour {
 
 	[SerializeField]/* 					  */public 	GameObject 		ds;
 	[SerializeField]/* 					  */public 	GameObject 		dsTop;
+	[SerializeField]/* 					  */public 	GameObject 		dsTopParent;
 	[SerializeField]/* 					  */public 	GameObject 		dsBottom;
 	[SerializeField]/* 					  */public 	Animator 		dsAnimation;
 	[SerializeField]/* 					  */public 	Material		dsMaterial;
 	[SerializeField]/* 					  */private bool 			dsIsOpen;
+	[SerializeField]/* 					  */private bool 			dsIsClosed;
 	[SerializeField]/* 					  */private bool 			dsSpotPass=false;
 	[SerializeField]/* 					  */private bool 			dsStreetPass=false;
 	[SerializeField]/* 					  */private bool 			dsLowBattery;
@@ -42,21 +44,28 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/* 					  */private Button 			glossButton;
 	[SerializeField]/* 					  */private Slider 			rotateSlider;
 	[SerializeField]/* 					  */private float 			rotateSliderAmount;
+	[SerializeField]/* 					  */private Slider 			topSlider;
+	[SerializeField]/* 					  */private float 			topSliderAmount;
 	[SerializeField]/* 					  */private Camera 			dsSideCamera;
 	[SerializeField]/* 					  */private Camera 			dsFrontCamera;
 	[SerializeField]/* 					  */private Camera 			dsCloseCamera;
 	[SerializeField]/* 					  */private GameObject streetPassLight;
 	[SerializeField]/* 					  */private GameObject spotPassLight;
 	[SerializeField]/* 					  */private GameObject batteryLight;
+	[SerializeField]/* 					  */private GameObject networkLight;
 	[SerializeField]/*					  */private AudioSource dsAudioSource;
 	[SerializeField]/*					  */private AudioClip[] dsAudioClips;
 	[SerializeField]/*					  */private Material glossShader;
 	[SerializeField]/*					  */private Material matteShader;
+	private float randomFlickerCount=1;
 
 
 	void Start(){
 
 		dsIsOpen=true;
+		dsIsClosed=false;
+
+		StartCoroutine(networkLighting());
 
 		Button theOpenDSButton = openDSButton.GetComponent<Button>();
     	Button theSpinSideDSButton = spinSideDSButton.GetComponent<Button>();
@@ -113,6 +122,22 @@ public class DSManagement : MonoBehaviour {
     	theGlossButton.onClick.AddListener(dsChangeShaderGloss);
 
 
+	}
+
+	IEnumerator networkLighting(){
+
+		while(true){
+		
+		randomFlickerCount = Random.Range(0.1f, 0.69f);
+
+		if (networkLight.activeSelf==true){
+		networkLight.SetActive(false);
+		yield return new WaitForSeconds(randomFlickerCount);
+		Debug.Log("Was On");}
+		else{networkLight.SetActive(true);
+			Debug.Log("Turning On");
+			yield return new WaitForSeconds(randomFlickerCount);}
+		}
 	}
 
 
@@ -254,11 +279,19 @@ public class DSManagement : MonoBehaviour {
 		if  (dsIsOpen){
 				dsAudioSource.PlayOneShot(dsAudioClips[0]);
 				dsAnimation.SetTrigger("seeYouOnTheFlippityFlip"); dsIsOpen=false;
+				spotPassLight.SetActive(true);
+				dsIsOpen=false;
+				dsIsClosed=true;
 				//dsAudioSource.PlayOneShot(dsAudioClips[0]);
 			}
 		else {
+				if (dsIsClosed){
 				dsAudioSource.PlayOneShot(dsAudioClips[0]);
 				dsAnimation.SetTrigger("seeYouOnTheFlippityFlop"); dsIsOpen=true;
+				spotPassLight.SetActive(false);
+				dsIsOpen=true;
+				dsIsClosed=false;
+			}
 				//dsAudioSource.PlayOneShot(dsAudioClips[0]);
 			}
 
@@ -276,6 +309,9 @@ public class DSManagement : MonoBehaviour {
 
 		rotateSliderAmount = rotateSlider.value;
 		ds.transform.rotation = Quaternion.Euler(0, rotateSliderAmount * 360, 0);
+
+		topSliderAmount = topSlider.value;
+		dsTop.transform.rotation = Quaternion.Euler(0, 0, 180);
 
 
 	}
