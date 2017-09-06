@@ -2,11 +2,11 @@
 documentation and examples
 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_colorChange.gif?raw=true)<br><br>
-![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_materials.gif?raw=true)
-
 
 This asset comes packaged with the NDS prefab.
 Drag it into the scene and hit play.
+
+![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsTesting_materials.gif?raw=true)
 
 There are a few buttons to play around with.
 
@@ -22,6 +22,8 @@ Within the inspector there are many parameters:
  - Alternative Scroll Rect Content
  
  Many of these settings may be available within Game Mode as well.
+ 
+ ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/testing/dsLightTesting5.gif?raw=true)
  
  If you'd like to use this in your game (like Luigi's Mansion!), just
  drag the prefab in, and modify the scroll rect content to match that of your game's needs.
