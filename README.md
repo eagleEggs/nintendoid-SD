@@ -38,4 +38,7 @@ There are many parameters to configure, most are defaulted to 'enabled':
     Includes all materials, configurations, script upgrades, further optimizations, and all extended updates.
  
 
-![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsLightTesting5.gif?raw=true)
+testing:
+
+https://github.com/eagleEggs/nintendoid-SD/tree/master/testing
+![anim1](in game camera)
