@@ -41,7 +41,8 @@ There are many parameters to configure, most are defaulted to 'enabled':
 
 
 
- go to sleep...
+ go to sleep... <br>
+ 
 ![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsLightTesting5.gif?raw=true)
 
 
