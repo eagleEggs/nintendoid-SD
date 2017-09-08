@@ -28,7 +28,7 @@ There are many parameters to configure, most are defaulted to 'enabled':
  - Sounds
  - Lights
  
- 
+  
  There are two versions of this asset:
  
  a) The base asset is free (usable content that can be optimized manually).
@@ -40,5 +40,16 @@ There are many parameters to configure, most are defaulted to 'enabled':
 
 testing:
 
+in game camera:
 https://github.com/eagleEggs/nintendoid-SD/tree/master/testing
-![anim1](in game camera)
+
+
+
+
+
+
+
+ go to sleep...
+![anim1](https://github.com/eagleEggs/nintendoDSscreenSimulator/blob/master/dsLightTesting.gif?raw=true)
+
+
