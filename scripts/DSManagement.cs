@@ -44,8 +44,11 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/* 					  */private Button 			glossButton;
 	[SerializeField]/* 					  */private Slider 			rotateSlider;
 	[SerializeField]/* 					  */private float 			rotateSliderAmount;
-	[SerializeField]/* 					  */private Slider 			topSlider;
 	[SerializeField]/* 					  */private float 			topSliderAmount;
+	[SerializeField]/* 					  */private Slider 			topSlider;
+	[SerializeField]/* 					  */private Slider 			ds3dSlider;
+	[SerializeField]/* 					  */private float 			ds3dSliderAmount;
+	[SerializeField]/* 					  */private Camera 			ds3dCamera;
 	[SerializeField]/* 					  */private Camera 			dsSideCamera;
 	[SerializeField]/* 					  */private Camera 			dsFrontCamera;
 	[SerializeField]/* 					  */private Camera 			dsCloseCamera;
@@ -58,12 +61,16 @@ public class DSManagement : MonoBehaviour {
 	[SerializeField]/*					  */private Material glossShader;
 	[SerializeField]/*					  */private Material matteShader;
 	private float randomFlickerCount=1;
+	private bool lowBattery=false;
+	private bool ds3dOn = false;
 
 
 	void Start(){
 
 		dsIsOpen=true;
 		dsIsClosed=false;
+		ds3dSlider.maxValue = 20;
+		ds3dSlider.minValue = 0f;
 
 		StartCoroutine(networkLighting());
 
@@ -124,9 +131,11 @@ public class DSManagement : MonoBehaviour {
 
 	}
 
+
+
 	IEnumerator networkLighting(){
 
-		while(true){
+		while(true && lowBattery==false){
 		
 		randomFlickerCount = Random.Range(0.1f, 0.69f);
 
@@ -312,6 +321,9 @@ public class DSManagement : MonoBehaviour {
 
 		topSliderAmount = topSlider.value;
 		dsTop.transform.rotation = Quaternion.Euler(0, 0, 180);
+
+		ds3dSliderAmount = ds3dSlider.value;
+		ds3dCamera.fieldOfView = ds3dSliderAmount + 60;
 
 
 	}
