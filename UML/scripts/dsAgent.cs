@@ -8,14 +8,14 @@ public class TemplateAgent : Agent {
   private Gameobject stylus;
   private GameObject topScreenBackLight;
   private GameObject bottomScreenBackLight;
-  public  bool       screenOnOff;
+  public  float      screenOnOff;
 
 	public override List<float> CollectState()
 	{
 		List<float> state = new List<float>();
-    state.Add(stylus.transform.position);
-    state.Add(top.transform.position.z);
-    state.Add(screenOnOff);
+    		state.Add(stylus.transform.position);
+    		state.Add(top.transform.position.z);
+    		state.Add(screenOnOff = 0f);
     
 		return state;
 	}
