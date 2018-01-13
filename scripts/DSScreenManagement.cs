@@ -1,34 +1,26 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DSScreenManagement : MonoBehaviour {
 
-	public ScrollRect bottomScreen;
-	public ScrollRect topScreen;
-
-
-	// Use this for initialization
-	void Start () {
-
-
-
-
-	}
+	[Header("nintendoid-SD")]
+	[Header("Scroll Rect Objects:")]
+	[SerializeField] private ScrollRect topScreen;
+	[SerializeField] private ScrollRect bottomScreen;
+	[Header("Adjustments:")]
+	[SerializeField] private float screenOffsetBase=0;
 	
-	// Update is called once per frame
+	void Start(){}
+
 	void Update () {
 
-		if(bottomScreen.verticalNormalizedPosition >=0){
-
-			//Debug.Log (bottomScreen.verticalNormalizedPosition);
-
-			//scrollRect.horizontalNormalizedPosition = Mathf.Clamp(scrollRect.horizontalNormalizedPosition, 0f, 1f);
-		
-
+		if(bottomScreen.verticalNormalizedPosition >= screenOffsetBase{
 		topScreen.verticalNormalizedPosition = bottomScreen.verticalNormalizedPosition;
-		
-	}
+		}
+
 }
+
+
 }
